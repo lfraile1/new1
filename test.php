@@ -18,4 +18,13 @@ class Client{
         $this->telephone=$telephone;
         $this->age=$age;
     }
+    public function setnom(int $nom){
+        if($nom != 'Paul'){
+            trigger_error(
+                'Mais vous ne vous appelez pas Paul!',
+            E_USER_ERROR
+            );
+        }
+        $this->nom=$nom;
+    }
 }
