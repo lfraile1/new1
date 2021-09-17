@@ -1,3 +1,23 @@
+<?php
+// On démarre une session
+session_start();
+
+// On inclut la connexion à la base
+require_once('connect.php');
+
+$sql = 'SELECT * FROM `liste`';
+
+// On prépare la requête
+$query = $db->prepare($sql);
+
+// On exécute la requête
+$query->execute();
+
+// On stocke le résultat dans un tableau associatif
+$result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+require_once('close.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -54,7 +74,7 @@
                         ?>
                     </tbody>
                 </table>
-                <a href="index.php?post=ajouter" class="btn btn-primary">Ajouter un produit</a>
+                <a href="add.php" class="btn btn-primary">Ajouter un produit</a>
             </section>
         </div>
     </main>

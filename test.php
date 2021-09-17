@@ -28,3 +28,4 @@ class Client{
         $this->nom=$nom;
     }
 }
+$client1 = new Client('Paul', 'Verlaine', '3 rue des poissons', 'p.v@gmail.com', 0758479374, 20);
